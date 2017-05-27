@@ -1,11 +1,11 @@
 /****************************************************
  * 
- * Тест библиотеки NRF24 от sslobodyan@yandex.ru
+ * РўРµСЃС‚ Р±РёР±Р»РёРѕС‚РµРєРё NRF24 РѕС‚ sslobodyan@yandex.ru
  * 
- * Определите пины CE_PIN и CSN_PIN.
+ * РћРїСЂРµРґРµР»РёС‚Рµ РїРёРЅС‹ CE_PIN Рё CSN_PIN.
  * 
- * Посылая в терминале s или r увидите сообщение об отправке 
- * и приемке на данном модуле и на удаленном.
+ * РџРѕСЃС‹Р»Р°СЏ РІ С‚РµСЂРјРёРЅР°Р»Рµ s РёР»Рё r СѓРІРёРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС‚РїСЂР°РІРєРµ 
+ * Рё РїСЂРёРµРјРєРµ РЅР° РґР°РЅРЅРѕРј РјРѕРґСѓР»Рµ Рё РЅР° СѓРґР°Р»РµРЅРЅРѕРј.
  * 
  *****************************************************/
 
@@ -22,13 +22,13 @@ uint8_t rxbuf[32];
 NRF24 radio(CE_PIN, CSN_PIN); 
 
 void RXhandler(uint8_t len){
-  rxbuf[len]=0; // на всякий случай ограничим строку
-  Serial.print(F("Приняли: "));
+  rxbuf[len]=0; // РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№ РѕРіСЂР°РЅРёС‡РёРј СЃС‚СЂРѕРєСѓ
+  Serial.print(F("РџСЂРёРЅСЏР»Рё: "));
   Serial.println( (char*) rxbuf );
 }
 
 void TXhandler(){
-  Serial.println(F("Отправили."));
+  Serial.println(F("РћС‚РїСЂР°РІРёР»Рё."));
 }
 
 void radio_setup(void) {
@@ -39,7 +39,7 @@ void radio_setup(void) {
   radio.RX_handler = RXhandler;
   radio.TX_handler = TXhandler; 
   if (! radio.begin() ){
-    Serial.println("Модуль не отвечает");
+    Serial.println("РњРѕРґСѓР»СЊ РЅРµ РѕС‚РІРµС‡Р°РµС‚");
     for(;;) ;
   }
 }
@@ -60,7 +60,7 @@ void loop() {
       byte c=Serial.read();
       if (c == 114) radio.print_registers();  // r
       if (c == 115) { // s
-        Serial.print(F("Отправляем... "));
+        Serial.print(F("РћС‚РїСЂР°РІР»СЏРµРј... "));
         send_data();  
       }
     }
