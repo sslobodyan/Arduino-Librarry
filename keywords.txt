@@ -1,0 +1,58 @@
+#######################################
+# Syntax Coloring Map For Matrix
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+NRF24				KEYWORD1
+local_address		KEYWORD1
+remote_address		KEYWORD1
+channel				KEYWORD1
+RX_handler			KEYWORD1
+TX_handler			KEYWORD1
+rx_buffer	KEYWORD1
+tx_buffer	KEYWORD1
+tx_buffer_len	KEYWORD1
+
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+check			KEYWORD2
+update_channel	KEYWORD2
+update_remote_address			KEYWORD2
+update_local_address			KEYWORD2
+set_channel		KEYWORD2
+set_local_address	KEYWORD2
+set_remote_address			KEYWORD2
+deassert_ce			KEYWORD2
+assert_ce		KEYWORD2
+csn_deassert	KEYWORD2
+csn_assert		KEYWORD2
+begin			KEYWORD2
+is_interrupt			KEYWORD2
+cmd	KEYWORD2
+read_rx_payload_width			KEYWORD2
+writereg_buf			KEYWORD2
+readreg_buf		KEYWORD2
+writereg	KEYWORD2
+readreg			KEYWORD2
+write_buf			KEYWORD2
+read_buf		KEYWORD2
+TX_FIFO_empty			KEYWORD2
+TX_FIFO_full		KEYWORD2
+RX_FIFO_empty	KEYWORD2
+RX_FIFO_full			KEYWORD2
+flushRX		KEYWORD2
+flushTX	KEYWORD2
+get_data			KEYWORD2
+send_data		KEYWORD2
+print_registers	KEYWORD2
+listening			KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
